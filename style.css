@@ -16,6 +16,11 @@
     :root { --nav-height: 72px; }
     body { padding-top: var(--nav-height); }
   }
+
+  @media (max-width: 450px) {
+    :root { --nav-height: 52px; }
+    body { padding-top: var(--nav-height); }
+  }
   
   
   /* =========================================================
@@ -26,6 +31,8 @@
     height: auto;
   }
   
+
+
   .navbar-light .nav-link {
     color: #0A2A66;
     font-weight: 200;
@@ -398,4 +405,100 @@
     height: auto;
   }
 
+}
+
+/* =========================
+   NAVBAR MOBILE STABILITY FIX
+   Append this at the END of your stylesheet
+   ========================= */
+
+/* Ensure root nav-height matches runtime expectations for tiny/phone screens */
+@media (max-width: 576px) {
+  :root { --nav-height: 64px; } /* smaller but comfortable nav height on phones */
+  body { padding-top: var(--nav-height); }
+}
+
+/* Make fixed navbar have a predictable height and centered content */
+.navbar-fixed,
+nav.navbar {
+  height: var(--nav-height);
+  min-height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+/* Brand row: logo + title aligned vertically */
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+  max-width: 72%;
+  overflow: hidden;
+  align-self: center;
+}
+
+/* Prefer max-height for logo instead of percentage width */
+.nav-logo {
+  width: auto !important;
+  max-height: calc(var(--nav-height) - 16px);
+  display: block;
+  object-fit: contain;
+}
+
+/* Neutralize earlier media rule that set width:45% on tiny screens */
+@media (max-width: 450px) {
+  .nav-logo {
+    width: auto !important;
+    max-height: calc(var(--nav-height) - 12px);
+  }
+}
+
+/* Make the toggler vertically centered and small enough */
+.navbar-toggler {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--nav-height) - 14px);
+  width: 44px;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+/* If you use custom icon inside toggler, ensure it scales */
+.navbar-toggler .navbar-toggler-icon,
+.navbar-toggler svg,
+.navbar-toggler i {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+
+/* Keep brand title from wrapping; show ellipsis if needed */
+.navbar-brand .brand-title,
+.navbar-brand .brand-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: calc(60vw - 64px); /* prevents it from pushing the toggler on very tiny screens */
+  font-weight: 600;
+}
+
+/* On slightly larger screens allow logo to be a bit bigger */
+@media (min-width: 768px) {
+  .nav-logo {
+    max-height: calc(var(--nav-height) - 8px);
+  }
+  .navbar-brand { max-width: 60%; }
+}
+
+.navbar-fixed > * {
+  margin-top: 0;
+  margin-bottom: 0;
 }
