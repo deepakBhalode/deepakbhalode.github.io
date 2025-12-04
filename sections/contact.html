@@ -1,0 +1,150 @@
+<section id="contact" class="anchor-offset" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 id="contact-heading" class="mb-1">Contact</h2>
+        <p class="lead hero-tagline mb-4">
+          I'm open to full-time roles, collaborations, and meaningful
+          conversations. Feel free to reach out.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-start">
+      <!-- Left: contact form -->
+      <div class="col-lg-7">
+        <form
+          id="contactForm"
+          class="contact-form"
+          novalidate
+          aria-describedby="contact-note"
+          data-form-action=""
+        >
+          <!-- data-form-action: optional. If set to a Formspree/endpoint URL, form will POST there. Leave empty to use mailto fallback. -->
+
+          <div class="mb-3">
+            <label for="cf-name" class="form-label">Name</label>
+            <input
+              id="cf-name"
+              name="name"
+              class="form-control"
+              type="text"
+              placeholder="Your name"
+              required
+            />
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="cf-email" class="form-label">Email</label>
+            <input
+              id="cf-email"
+              name="email"
+              class="form-control"
+              type="email"
+              placeholder="you@company.com"
+              required
+            />
+            <div class="invalid-feedback">
+              Please provide a valid email so I can reply.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="cf-subject" class="form-label">Subject</label>
+            <input
+              id="cf-subject"
+              name="subject"
+              class="form-control"
+              type="text"
+              placeholder="Quick note about the topic"
+              required
+            />
+            <div class="invalid-feedback">Please add a subject.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="cf-message" class="form-label">Message</label>
+            <textarea
+              id="cf-message"
+              name="message"
+              class="form-control"
+              rows="6"
+              placeholder="Tell me what you need — I’ll get back with next steps."
+              required
+            ></textarea>
+            <div class="invalid-feedback">Please add a short message.</div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <button
+              id="cf-submit"
+              class="btn btn-primary btn-resume"
+              type="submit"
+            >
+              Send Message
+            </button>
+            <a
+              class="btn btn-outline-dark"
+              href="assets/Deepak_Bhalode_Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >Download Resume (PDF)</a
+            >
+          </div>
+
+          <p id="contact-note" class="text-muted mt-3 mb-0">
+            By contacting me you agree I may reply by email. I do not share your
+            message.
+          </p>
+        </form>
+      </div>
+
+      <!-- Right: contact details / socials -->
+      <div class="col-lg-5">
+        <aside class="skill-card">
+          <h3 class="h6 mb-3">Contact Details</h3>
+
+          <p class="mb-2">
+            <strong>Email</strong><br />
+            <a href="mailto:deepak.bhalode.sbg@example.com"
+              >deepak.bhalode.sbg@example.com</a
+            >
+          </p>
+
+          <h4 class="h6 mb-2">Social</h4>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <a
+              class="filter-chip"
+              href="https://github.com/deepakBhalode"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            <a
+              class="filter-chip"
+              href="https://www.linkedin.com/in/er-deepak-bhalode/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+            <!-- <a
+                class="filter-chip"
+                href="https://twitter.com/yourhandle"
+                target="_blank"
+                rel="noopener"
+                >X / Twitter</a
+              > -->
+          </div>
+
+          <hr />
+
+          <h4 class="h6 mb-2">Availability</h4>
+          <p class="mb-0">
+            Open to full-time roles, collaborations and technical advisory.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
